@@ -1,0 +1,86 @@
+# This rule says goodbye to the user whenever they say goodbye.
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+# This rule tells the user that it is a bot whenever they challenge it.
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+# This rule responds to the user's greetings.
+- rule: Respond to greetings
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+# This rule responds to the user's thank you.
+- rule: Respond to "thank you"
+  steps:
+    - intent: thank
+    - action: utter_thank
+
+# This rule says goodbye to the user.
+- rule: Say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+# This rule handles the user's denial.
+- rule: Handle denial
+  steps:
+    - intent: deny
+    - action: utter_deny
+
+# This rule is used when the user's intent cannot be determined.
+- rule: Fallback rule
+  steps:
+    - intent: nlu_fallback
+    - action: utter_unclear
+
+# This rule handles any errors that are not handled by the other rules.
+- rule: Handle errors
+  steps:
+    - action: action_handle_error
+
+# This rule is used when the user says "end".
+- rule: Handle end
+  steps:
+    - intent: end
+    - action: utter_goodbye
+
+# This rule fetches data from a CSV file.
+- rule: Fetch data from CSV
+  steps:
+    - intent: fetch_data
+    - action: action_fetch_data
+    - active_loop: action_fetch_data
+
+# This rule allows the user to provide an API key.
+- rule: Provide API Key
+  steps:
+    - intent: provide_api_key
+    - action: action_fetch_data
+    - active_loop: action_fetch_data
+
+# This rule allows the user to provide a CSV file.
+- rule: Provide CSV File
+  steps:
+    - intent: provide_csv_file
+    - action: action_fetch_data
+    - active_loop: action_fetch_data
+
+# This rule handles the user's affirmation.
+- rule: Handle affirmation
+  steps:
+    - intent: affirm
+    - action: action_fetch_data
+    - active_loop: null # Reset active_loop after the action
+
+- rule: Handle Greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+

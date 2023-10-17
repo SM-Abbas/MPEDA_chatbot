@@ -1,0 +1,50 @@
+version: "3.1"
+
+intents:
+  - fetch_data
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - thank
+  - some_intent
+  - Nword
+  - csv_files
+responses:
+
+  fetch_data:
+    - text: "Fetching the data..."
+  utter_greet:
+    - text: "Hey! How are you?"
+    - text: "Hello! How can I assist you?"
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSADT5ROhR9EaCwhU3l1n8Xkp5PMHwsb_TP1g&usqp=CAU"
+  utter_did_that_help:
+    - text: "Did that help you?"
+  utter_happy:
+    - text: "Great, carry on!"
+  utter_goodbye:
+    - text: "Bye"
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+  utter_thank:
+    - text: "You're welcome! If you need more help, just let me know."
+  utter_deny:
+    - text: "No problem. If you change your mind, feel free to ask."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+entities:
+  - csv_file
+  - api_key
+
+actions:
+  - action_fetch_data
+  
+

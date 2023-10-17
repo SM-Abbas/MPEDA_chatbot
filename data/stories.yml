@@ -1,0 +1,73 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: User says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+
+
+- story: Greeting and Fetch Data
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch_data
+  - action: action_fetch_data
+  - action: utter_goodbye
+
+- story: Fetch Data and Say Thank You
+  steps:
+  - intent: fetch_data
+  - action: action_fetch_data
+  - intent: thank
+  - action: utter_thank
+
+- story : Fetch csv file
+  steps:
+  - intent: fetch_csv_file
+  - intent: Guwahati
+  - intent: Mumbai
+  - action: action_fetch_data
+
+
+- story: User requests to see a bot response
+  steps:
+  - intent: bot_challange
+  - intent: some_intent
+  - action: utter_iamabot
+- story: user requests nudes,sex,Nword
+  steps:
+  - intent: fetch_data
+  - intent: Nword
+  - action : utter_iamabot
+  - action : utter_deny

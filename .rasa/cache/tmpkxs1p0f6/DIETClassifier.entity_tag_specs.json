@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-data/ExportersDirectory.csv",
+      "2": "I-data/ExportersDirectory.csv",
+      "3": "L-data/ExportersDirectory.csv",
+      "4": "U-data/ExportersDirectory.csv",
+      "5": "B-url",
+      "6": "I-url",
+      "7": "L-url",
+      "8": "U-url",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-data/ExportersDirectory.csv": 1,
+      "I-data/ExportersDirectory.csv": 2,
+      "L-data/ExportersDirectory.csv": 3,
+      "U-data/ExportersDirectory.csv": 4,
+      "B-url": 5,
+      "I-url": 6,
+      "L-url": 7,
+      "U-url": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

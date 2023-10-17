@@ -1,0 +1,64 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+
+- story: Greeting and Fetch Data
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch_data
+  - action: action_fetch_data
+  - action: utter_goodbye
+
+- story: Fetch Data and Say Thank You
+  steps:
+  - intent: fetch_data
+  - action: action_fetch_data
+  - intent: thank
+  - action: utter_thank
+
+- story: Denial and Provide API Key
+  steps:
+  - intent: deny
+  - action: utter_deny
+  - intent: api_key
+  - action: action_fetch_data
+  - action: utter_goodbye
+
+- story: Fetch Data with CSV File and Affirmation
+  steps:
+  - intent: fetch_data
+  - action: action_fetch_data
+  - intent: csv_file
+  - action: action_fetch_data
+  - intent: affirm
+  - action: utter_goodbye
