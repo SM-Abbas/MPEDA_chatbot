@@ -45,7 +45,7 @@ class ActionFetchData(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
         # Replace YOUR_API_KEY with your actual API key
-        openai.api_key = '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'  # Replace with your OpenAI API key
+        openai.api_key = '##################################'  # Replace with your OpenAI API key
 
         # Read the CSV data
         csv_data = read_csv_data("data/ExportersDirectory.csv")
